@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zunora · Datenschutz / Privacy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="index.html"><i></i>Zunora</a>
+    <a class="l" href="download.html">Download</a>
+    <a class="l" href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+    <a class="l" href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
+    <a class="l" href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
+    <button class="lang">Deutsch</button>
+  </nav>
+
+  <article class="glass legal in" lang="de">
+    <h1>Datenschutzerklärung — Zunora Messenger</h1>
+    <h3>1. Verantwortlich</h3>
+    <p>Tim Sainisch<br>Kniprodestraße 17<br>26388 Wilhelmshaven<br>Deutschland<br>E-Mail: <a href="mailto:zunora@outlook.de">zunora@outlook.de</a></p>
+    <h3>2. Das Wichtigste in Kürze</h3>
+    <ul><li>Chats, Gruppen, Status und Anrufe sind Ende-zu-Ende verschlüsselt: Nur die Geräte der Teilnehmer können sie lesen — der Anbieter nicht.</li>
+      <li>Server (Kanäle wie bei Discord) sind NICHT Ende-zu-Ende verschlüsselt: Mitglieder und der Anbieter können sie lesen.</li>
+      <li>Keine Werbung, kein Tracking, keine Weitergabe an Werbepartner.</li>
+      <li>Gespeichert wird auf dem Zunora-Server (Supabase, Rechenzentrum in Irland, EU) nur, was der Messenger zum Funktionieren braucht.</li></ul>
+    <h3>3. Dein Konto</h3>
+    <p>Nutzername, Anzeigename, Info-Text und Profilbild (für andere sichtbar, damit sie dich finden), dein Passwort (nur als sicherer Prüfwert), Zeitpunkt der Anmeldung und „zuletzt online“ (standardmäßig aus, siehe 5h). Für die Anmeldung erzeugt die App aus deinem Nutzernamen eine nie zustellbare Hilfs-Adresse; eine echte E-Mail-Adresse wird nicht abgefragt.</p>
+    <h3>4. Geräte</h3>
+    <p>Je angemeldetem Gerät: Name des Geräts (z. B. Handy-Modell), öffentliche Schlüssel für die Verschlüsselung, Zeitpunkt der letzten Nutzung und — für Benachrichtigungen — eine Kennung von Firebase Cloud Messaging (Google). Du kannst Geräte jederzeit in den Einstellungen abmelden.</p>
+    <h3>5. Nachrichten</h3>
+    <p>Der Server speichert verschlüsselte Nachrichten und Dateien, bis sie gelöscht werden oder (bei verschwindenden Nachrichten) ablaufen. Lesbar sind für den Server nur Verwaltungsdaten: wer in welchem Chat ist, wann eine Nachricht gesendet wurde, ihre Art und Größe, Reaktionen und Gelesen-Zeitpunkte. Eine IP-Adresse sehen technisch der Server-Dienst Supabase und das Rechenzentrum.</p>
+    <h3>5a. Server und Kanäle</h3>
+    <p>In Servern (Kanäle, Threads, Forum) stehen Texte und Umfragen lesbar auf dem Server, damit alle Mitglieder — auch neue — sie sehen können. Bilder und Dateien sind dort verschlüsselt abgelegt, der Schlüssel steht aber in der für Mitglieder lesbaren Nachricht. Rollen, Mitglieder, Spitznamen und Banns werden gespeichert. Erwähnt dich jemand (@Name), bekommst du eine Benachrichtigung.</p>
+    <h3>5b. Status, Umfragen, Termine</h3>
+    <p>Ein Status ist Ende-zu-Ende für deine Freunde verschlüsselt und wird nach 24 Stunden gelöscht; gespeichert wird, wer ihn angesehen hat (sichtbar nur für dich). Bei Umfragen und Terminen speichert der Server nur die Nummer der gewählten Antwort bzw. die Zusage — die Frage selbst ist im Chat verschlüsselt.</p>
+    <h3>5c. Anrufe und Sprachkanäle</h3>
+    <p>Ton und Bild gehen direkt zwischen den Geräten (WebRTC) und sind immer verschlüsselt; der Anbieter hört und sieht nichts. Damit die Verbindung zustande kommt, sehen die Gesprächspartner technisch deine IP-Adresse. Zum Finden der Verbindung wird ein STUN-Dienst von Google (stun.l.google.com) gefragt, der dabei deine IP-Adresse sieht. Der Server speichert, wer wann an einem Anruf teilgenommen hat (30 Tage — daraus entsteht dein Anruf-Verlauf), und Verbindungs-Nachrichten (1 Stunde; bei Chat-Anrufen Ende-zu-Ende verschlüsselt). Am PC kannst du deinen Bildschirm teilen — nur solange du es selbst einschaltest.</p>
+    <h3>5d. Verlauf-Sicherung (freiwillig)</h3>
+    <p>Schaltest du sie ein, liegen die Schlüssel deines Handys zusätzlich auf dem Server — verschlüsselt mit deinem Passwort (PBKDF2 und AES-GCM). Ohne dein Passwort kann niemand sie öffnen, auch der Anbieter nicht. Ausschalten löscht die Sicherung.</p>
+    <h3>5e. Server entdecken, Bots</h3>
+    <p>Schalten die Admins eines Servers „Server entdecken“ ein, sind Name, Beschreibung, Stichworte und Mitgliederzahl für alle Nutzer sichtbar, und jeder kann ohne Code beitreten. Admins können Mitgliedern eine Auszeit geben — gespeichert wird nur das Ende der Auszeit.</p>
+    <h3>5f. Profil-, Gruppen- und Server-Bilder</h3>
+    <p>Ein Profilbild, Gruppenbild oder Server-Bild ist NICHT Ende-zu-Ende verschlüsselt: Es liegt auf dem Zunora-Server und ist für andere Nutzer sichtbar. Du kannst es jederzeit entfernen. Lässt du ein Bild „Mit KI erstellen“, geht nur deine Beschreibung (kein Foto, kein Name) an den kostenlosen Bilddienst Pollinations, der außerhalb der EU liegen kann.</p>
+    <h3>5g. Ohne Internet und Zwischenspeicher</h3>
+    <p>Damit du auch ohne Internet lesen und schreiben kannst und nicht alles neu geladen werden muss, speichert die App Chats, Nachrichten, Bilder und Dateien verschlüsselt auf deinem Gerät. Beim Abmelden wird das gelöscht.</p>
+    <h3>5h. Online, zuletzt online, Lesebestätigung</h3>
+    <p>„Online“ und „zuletzt online“ sind standardmäßig AUS. Schaltest du sie ein, meldet sich die App jede Minute kurz beim Server, solange sie offen ist; gespeichert wird nur der Zeitpunkt. Sehen können das nur Freunde und Personen, mit denen du einen Chat hast — und nur, wenn sie es selbst eingeschaltet haben. Dasselbe gilt für Lesebestätigungen.</p>
+    <h3>5i. Chat-Verlauf auf ein neues Gerät übertragen</h3>
+    <p>Die Übertragung ist mit einem zufälligen Schlüssel verschlüsselt, zusätzlich mit dem angezeigten Code und Ende-zu-Ende für das neue Gerät. Die Datei liegt höchstens 30 Minuten auf dem Server und wird danach gelöscht.</p>
+    <h3>5j. Updates</h3>
+    <p>Die Version aus dem Microsoft Store wird über den Microsoft Store aktualisiert. Andere Versionen fragen beim Start (abschaltbar) beim Zunora-Store-Server nach einer neueren Version; dabei wird nur die übliche Verbindung (IP-Adresse) sichtbar, keine Kontodaten.</p>
+    <h3>5k. Abo (Zunora Plus)</h3>
+    <p>Gespeichert werden Art, Herkunft (z. B. Dankeschön für Tester), Beginn und Ende deines Abos, damit Plus freigeschaltet werden kann. Bezahlt wird dafür derzeit nichts.</p>
+    <h3>6. Freunde, Blockieren, Melden</h3>
+    <p>Freundschaften und Blockierungen werden gespeichert. Meldest du eine Nachricht, wird der Inhalt dieser einen Nachricht zusammen mit dem gewählten Grund an den Anbieter geschickt, damit er sie prüfen kann (Pflicht nach dem Digital Services Act).</p>
+    <h3>7. Zunora AI im Chat</h3>
+    <p>Schreibst du „@Zunora“, gehen deine Frage und die letzten Nachrichten dieses Chats an einen kostenlosen KI-Dienst im Internet (OVHcloud AI Endpoints oder Pollinations), damit er antworten kann. Diese Dienste können außerhalb der EU liegen. Ohne „@Zunora“ geht nichts an eine KI.</p>
+    <h3>8. Benachrichtigungen</h3>
+    <p>Benachrichtigungen am Handy werden über Firebase Cloud Messaging (Google) zugestellt. Google erhält dabei nur die Gerätekennung und einen Hinweis „neue Nachricht“ — keinen Inhalt.</p>
+    <h3>9. Rechtsgrundlage, Speicherdauer</h3>
+    <p>Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung des Messengers). Löschst du dein Konto (Einstellungen → Konto löschen), werden Profil, Geräte, Freundschaften und Mitgliedschaften sofort gelöscht.</p>
+    <h3>10. Deine Rechte</h3>
+    <p>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch (Art. 15–21 DSGVO) und Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Kontakt: siehe Abschnitt 1.</p>
+    <h3>Diese Webseite</h3>
+    <p>Diese Webseite wird über GitHub Pages bereitgestellt; GitHub sieht dabei technisch deine IP-Adresse. Sie setzt keine Cookies und nutzt kein Tracking. Die gewählte Sprache merkt sich nur dein Browser.</p>
+    <p class="muted">Stand: November 2026</p>
+  </article>
+
+  <article class="glass legal in" lang="en">
+    <h1>Privacy Policy — Zunora Messenger</h1>
+    <h3>1. Controller</h3>
+    <p>Tim Sainisch<br>Kniprodestraße 17<br>26388 Wilhelmshaven<br>Germany<br>Email: <a href="mailto:zunora@outlook.de">zunora@outlook.de</a></p>
+    <h3>2. The essentials</h3>
+    <ul><li>Chats, groups, status and calls are end-to-end encrypted: only the participants' devices can read them — not the provider.</li>
+      <li>Servers (channels like on Discord) are NOT end-to-end encrypted: members and the provider can read them.</li>
+      <li>No ads, no tracking, no sharing with advertising partners.</li>
+      <li>The Zunora server (Supabase, data center in Ireland, EU) only stores what the messenger needs to work.</li></ul>
+    <h3>3. Your account</h3>
+    <p>Username, display name, info text and profile picture (visible to others so they can find you), your password (only as a secure check value), time of sign-in and “last seen” (off by default, see 5h). For signing in, the app creates an undeliverable helper address from your username; no real email address is requested.</p>
+    <h3>4. Devices</h3>
+    <p>Per signed-in device: device name (e.g. phone model), public keys for encryption, time of last use and — for notifications — a Firebase Cloud Messaging (Google) ID. You can sign out devices in the settings at any time.</p>
+    <h3>5. Messages</h3>
+    <p>The server stores encrypted messages and files until they are deleted or (for disappearing messages) expire. The server can only read administrative data: who is in which chat, when a message was sent, its type and size, reactions and read times. Technically, the server service Supabase and the data center see an IP address.</p>
+    <h3>5a. Servers and channels</h3>
+    <p>In servers (channels, threads, forum), texts and polls are stored readable on the server so all members — including new ones — can see them. Pictures and files are stored encrypted there, but the key is in the message, which members can read. Roles, members, nicknames and bans are stored. If someone mentions you (@name), you get a notification.</p>
+    <h3>5b. Status, polls, events</h3>
+    <p>A status is end-to-end encrypted for your friends and deleted after 24 hours; it is stored who viewed it (visible only to you). For polls and events, the server only stores the number of the chosen answer or the RSVP — the question itself is encrypted in the chat.</p>
+    <h3>5c. Calls and voice channels</h3>
+    <p>Audio and video go directly between the devices (WebRTC) and are always encrypted; the provider hears and sees nothing. To establish the connection, the other participants technically see your IP address. To find the connection, a STUN service by Google (stun.l.google.com) is asked, which sees your IP address. The server stores who took part in a call and when (30 days — this is your call history) and connection messages (1 hour; end-to-end encrypted for chat calls). On PC you can share your screen — only while you turn it on yourself.</p>
+    <h3>5d. History backup (optional)</h3>
+    <p>If you turn it on, your phone's keys are also stored on the server — encrypted with your password (PBKDF2 and AES-GCM). Without your password nobody can open them, not even the provider. Turning it off deletes the backup.</p>
+    <h3>5e. Discover servers, bots</h3>
+    <p>If a server's admins turn on “Discover servers”, its name, description, tags and member count are visible to all users, and anyone can join without a code. Admins can give members a timeout — only the end of the timeout is stored.</p>
+    <h3>5f. Profile, group and server pictures</h3>
+    <p>A profile, group or server picture is NOT end-to-end encrypted: it is stored on the Zunora server and visible to other users. You can remove it at any time. If you have a picture “created with AI”, only your description (no photo, no name) goes to the free image service Pollinations, which may be outside the EU.</p>
+    <h3>5g. Offline use and cache</h3>
+    <p>So you can read and write without internet and not everything has to be reloaded, the app stores chats, messages, pictures and files encrypted on your device. This is deleted when you sign out.</p>
+    <h3>5h. Online, last seen, read receipts</h3>
+    <p>“Online” and “last seen” are OFF by default. If you turn them on, the app briefly checks in with the server every minute while it's open; only the time is stored. Only friends and people you have a chat with can see it — and only if they have turned it on themselves. The same applies to read receipts.</p>
+    <h3>5i. Transferring chat history to a new device</h3>
+    <p>The transfer is encrypted with a random key, additionally locked with the code shown and end-to-end for the new device. The file stays on the server for at most 30 minutes and is then deleted.</p>
+    <h3>5j. Updates</h3>
+    <p>The version from the Microsoft Store is updated through the Microsoft Store. Other versions ask the Zunora Store server for a newer version at start (can be turned off); only the usual connection (IP address) is visible, no account data.</p>
+    <h3>5k. Subscription (Zunora Plus)</h3>
+    <p>We store the type, origin (e.g. thank-you for testers), start and end of your subscription so Plus can be unlocked. Currently nothing is charged for it.</p>
+    <h3>6. Friends, blocking, reporting</h3>
+    <p>Friendships and blocks are stored. If you report a message, the content of this one message is sent to the provider together with the chosen reason so it can be reviewed (required by the Digital Services Act).</p>
+    <h3>7. Zunora AI in chat</h3>
+    <p>If you write “@Zunora”, your question and the latest messages of this chat go to a free AI service on the internet (OVHcloud AI Endpoints or Pollinations) so it can answer. These services may be outside the EU. Without “@Zunora”, nothing goes to an AI.</p>
+    <h3>8. Notifications</h3>
+    <p>Notifications on phones are delivered via Firebase Cloud Messaging (Google). Google only receives the device ID and a “new message” hint — no content.</p>
+    <h3>9. Legal basis, retention</h3>
+    <p>Art. 6(1)(b) GDPR (providing the messenger). If you delete your account (Settings → Delete account), profile, devices, friendships and memberships are deleted immediately.</p>
+    <h3>10. Your rights</h3>
+    <p>Access, rectification, erasure, restriction, data portability, objection (Art. 15–21 GDPR) and complaint to a data protection supervisory authority. Contact: see section 1.</p>
+    <h3>This website</h3>
+    <p>This website is hosted on GitHub Pages; GitHub technically sees your IP address. It sets no cookies and uses no tracking. Only your browser remembers the chosen language.</p>
+    <p class="muted">Last updated: November 2026</p>
+  </article>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

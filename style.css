@@ -1,0 +1,46 @@
+/* Zunora-Webseite — Zunora-Look: Aurora-Hintergrund, Glas, weiche Federn */
+:root {
+  --bg: #0e0b26; --panel: rgba(27, 37, 66, .58); --line: rgba(255, 255, 255, .14); --text: #edf2ff; --sub: #b9c3e6;
+  --accent: #9b7bff; --accent2: #5aa9ff; --spring: cubic-bezier(.34, 1.56, .64, 1);
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #e4e0fa; --panel: rgba(243, 246, 255, .72); --line: rgba(42, 47, 107, .14); --text: #192744; --sub: #45516f; --accent: #5b3df0; --accent2: #1f6fe0; }
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; min-height: 100vh; color: var(--text); line-height: 1.6;
+  background: radial-gradient(60vmax 50vmax at 12% 8%, color-mix(in srgb, #6d4cff 45%, transparent), transparent 60%),
+    radial-gradient(55vmax 45vmax at 92% 18%, color-mix(in srgb, #2a7fff 35%, transparent), transparent 60%),
+    radial-gradient(60vmax 50vmax at 60% 100%, color-mix(in srgb, #c04cff 35%, transparent), transparent 60%), var(--bg); background-attachment: fixed; }
+a { color: var(--accent); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 18px 16px 60px; }
+nav.top { position: sticky; top: 10px; z-index: 5; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 8px 10px; margin-bottom: 26px; border-radius: 22px;
+  background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 18px 50px -20px rgba(10, 6, 40, .5); }
+nav.top .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; margin-right: auto; text-decoration: none; color: var(--text); }
+nav.top .brand i { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: inline-block; }
+nav.top a.l { text-decoration: none; color: var(--text); padding: 6px 11px; border-radius: 12px; font-size: 14px; transition: background .2s, scale .5s var(--spring); }
+nav.top a.l:hover { background: rgba(255, 255, 255, .1); } nav.top a.l:active { scale: .93; }
+nav.top button.lang { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 12px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer; }
+.glass { background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 22px; backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 18px 50px -24px rgba(10, 6, 40, .55); }
+.hero { text-align: center; padding: 44px 22px; }
+.hero h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -.02em; }
+.hero p { color: var(--sub); font-size: 18px; margin: 0 auto 22px; max-width: 620px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 18px; }
+.app h3 { margin: 0 0 4px; } .app p { color: var(--sub); margin: 0 0 14px; font-size: 15px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 16px; font-weight: 700; text-decoration: none; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); margin: 4px 6px 4px 0; transition: scale .5s var(--spring), filter .2s; }
+.btn:hover { filter: brightness(1.1); } .btn:active { scale: .94; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn.off { opacity: .55; pointer-events: none; }
+h2 { margin: 26px 0 8px; } h3 { margin: 18px 0 4px; font-size: 17px; }
+.legal p, .legal li { color: var(--text); opacity: .92; }
+.muted { color: var(--sub); font-size: 14px; }
+footer { margin-top: 34px; text-align: center; color: var(--sub); font-size: 13px; }
+footer a { margin: 0 8px; }
+/* Sprache: nur die gewählte zeigen */
+html[data-l="de"] [lang="en"]:not(html), html[data-l="en"] [lang="de"]:not(html) { display: none !important; }
+.in { animation: zin .7s var(--spring) both; } @keyframes zin { from { opacity: 0; translate: 0 16px; } }
+@media (prefers-reduced-motion: reduce) { .in { animation: none; } }
