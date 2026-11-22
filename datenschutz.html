@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
   <nav class="top">
     <a class="brand" href="index.html"><i></i>Zunora</a>
     <a class="l" href="index.html">Start</a>
@@ -17,6 +17,10 @@
     <a class="l" href="download.html">Download</a>
     <button class="lang">Deutsch</button>
   </nav>
+  <section class="glass hero in legal-hero"><h1><span lang="de">Datenschutz</span><span lang="en">Privacy</span></h1><p lang="de">Was mit deinen Daten passiert — und was nicht.</p><p lang="en">What happens to your data — and what doesn't.</p></section>
+  <div class="legal-grid">
+    <aside class="glass toc" data-toc></aside>
+    <div class="legal-main">
 
   <article class="glass legal in" lang="de">
     <h1>Datenschutzerklärung — Zunora Messenger</h1>
@@ -36,7 +40,7 @@
     <h3>5a. Server und Kanäle</h3>
     <p>In Servern (Kanäle, Threads, Forum) stehen Texte und Umfragen lesbar auf dem Server, damit alle Mitglieder — auch neue — sie sehen können. Bilder und Dateien sind dort verschlüsselt abgelegt, der Schlüssel steht aber in der für Mitglieder lesbaren Nachricht. Rollen, Mitglieder, Spitznamen und Banns werden gespeichert. Erwähnt dich jemand (@Name), bekommst du eine Benachrichtigung.</p>
     <h3>5b. Status, Umfragen, Termine</h3>
-    <p>Ein Status ist Ende-zu-Ende für deine Freunde verschlüsselt und wird nach 24 Stunden gelöscht; gespeichert wird, wer ihn angesehen hat (sichtbar nur für dich). Bei Umfragen und Terminen speichert der Server nur die Nummer der gewählten Antwort bzw. die Zusage — die Frage selbst ist im Chat verschlüsselt.</p>
+    <p>Ein Status (Text, Foto oder Video bis 60 Sekunden) ist Ende-zu-Ende für die Freunde verschlüsselt, die ihn sehen dürfen, und wird nach der gewählten Laufzeit (24 Stunden, 3 oder 7 Tage) gelöscht. Gespeichert wird, wer ihn angesehen hat (sichtbar nur für dich) und wer ein Herz gegeben hat (sichtbar für alle, die den Status sehen). Kommentare sind ebenfalls Ende-zu-Ende verschlüsselt — der Server sieht nur, wer wann kommentiert hat, nicht den Text. Bei Umfragen und Terminen speichert der Server nur die Nummer der gewählten Antwort bzw. die Zusage — die Frage selbst ist im Chat verschlüsselt.</p>
     <h3>5c. Anrufe und Sprachkanäle</h3>
     <p>Ton und Bild gehen direkt zwischen den Geräten (WebRTC) und sind immer verschlüsselt; der Anbieter hört und sieht nichts. Damit die Verbindung zustande kommt, sehen die Gesprächspartner technisch deine IP-Adresse. Zum Finden der Verbindung wird ein STUN-Dienst von Google (stun.l.google.com) gefragt, der dabei deine IP-Adresse sieht. Der Server speichert, wer wann an einem Anruf teilgenommen hat (30 Tage — daraus entsteht dein Anruf-Verlauf), und Verbindungs-Nachrichten (1 Stunde; bei Chat-Anrufen Ende-zu-Ende verschlüsselt). Am PC kannst du deinen Bildschirm teilen — nur solange du es selbst einschaltest.</p>
     <h3>5d. Verlauf-Sicherung (freiwillig)</h3>
@@ -65,6 +69,12 @@
     <p>Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung des Messengers). Löschst du dein Konto (Einstellungen → Konto löschen), werden Profil, Geräte, Freundschaften und Mitgliedschaften sofort gelöscht.</p>
     <h3>10. Deine Rechte</h3>
     <p>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch (Art. 15–21 DSGVO) und Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Kontakt: siehe Abschnitt 1.</p>
+    <h3>Weitere Zunora-Apps</h3>
+    <p>Jede Zunora-App hat in den Einstellungen eine eigene, ausführliche Datenschutz-Seite. Kurz gesagt: keine Werbung, kein Tracking, und ohne Zunora ID bleibt alles auf deinem Gerät.</p>
+    <ul><li><b>Zunora App Store:</b> lädt die App-Liste vom Store-Server (Supabase, Irland) und die Dateien von GitHub; zählt Downloads ohne Bezug zu dir.</li>
+      <li><b>Zunora Notizen, Kalender, Browser, Wetter:</b> mit Zunora ID werden Notizen, Termine, offene Tabs, Lesezeichen und Wetter-Orte Ende-zu-Ende verschlüsselt in der Zunora Cloud gespeichert (Supabase, Irland) — nur deine Geräte können sie lesen. Wetterdaten kommen von Open-Meteo, Unwetterwarnungen vom Deutschen Wetterdienst über Bright Sky.</li>
+      <li><b>Zunora Files, Fotos, Kamera:</b> arbeiten nur auf deinem Handy und laden nichts hoch. Den Aufnahme-Ort speichert die Kamera nur, wenn du es einschaltest.</li>
+      <li><b>Zunora SMS:</b> SMS und MMS laufen über dein Mobilfunknetz und bleiben auf deinem Handy; Spam-Prüfung und Bestätigungscodes werden nur auf dem Handy erkannt.</li></ul>
     <h3>Diese Webseite</h3>
     <p>Diese Webseite wird über GitHub Pages bereitgestellt; GitHub sieht dabei technisch deine IP-Adresse. Sie setzt keine Cookies und nutzt kein Tracking. Die gewählte Sprache merkt sich nur dein Browser.</p>
     <p><b>Web-Store:</b> Die Seite „Store“ lädt die Liste der Zunora-Apps, Bilder und Versionen vom Zunora-Store-Server (Supabase, Rechenzentrum in Irland); dabei sieht Supabase technisch deine IP-Adresse. Lädst du eine App herunter, kommt die Datei von GitHub, und der Download-Zähler der App wird um eins erhöht — ohne Bezug zu dir. Es gibt dort kein Konto und keine Anmeldung.</p>
@@ -89,7 +99,7 @@
     <h3>5a. Servers and channels</h3>
     <p>In servers (channels, threads, forum), texts and polls are stored readable on the server so all members — including new ones — can see them. Pictures and files are stored encrypted there, but the key is in the message, which members can read. Roles, members, nicknames and bans are stored. If someone mentions you (@name), you get a notification.</p>
     <h3>5b. Status, polls, events</h3>
-    <p>A status is end-to-end encrypted for your friends and deleted after 24 hours; it is stored who viewed it (visible only to you). For polls and events, the server only stores the number of the chosen answer or the RSVP — the question itself is encrypted in the chat.</p>
+    <p>A status (text, photo or video up to 60 seconds) is end-to-end encrypted for the friends allowed to see it and deleted after the chosen duration (24 hours, 3 or 7 days). It is stored who viewed it (visible only to you) and who gave a heart (visible to everyone who can see the status). Comments are end-to-end encrypted as well — the server only sees who commented when, not the text. For polls and events, the server only stores the number of the chosen answer or the RSVP — the question itself is encrypted in the chat.</p>
     <h3>5c. Calls and voice channels</h3>
     <p>Audio and video go directly between the devices (WebRTC) and are always encrypted; the provider hears and sees nothing. To establish the connection, the other participants technically see your IP address. To find the connection, a STUN service by Google (stun.l.google.com) is asked, which sees your IP address. The server stores who took part in a call and when (30 days — this is your call history) and connection messages (1 hour; end-to-end encrypted for chat calls). On PC you can share your screen — only while you turn it on yourself.</p>
     <h3>5d. History backup (optional)</h3>
@@ -118,11 +128,28 @@
     <p>Art. 6(1)(b) GDPR (providing the messenger). If you delete your account (Settings → Delete account), profile, devices, friendships and memberships are deleted immediately.</p>
     <h3>10. Your rights</h3>
     <p>Access, rectification, erasure, restriction, data portability, objection (Art. 15–21 GDPR) and complaint to a data protection supervisory authority. Contact: see section 1.</p>
+    <h3>Other Zunora apps</h3>
+    <p>Every Zunora app has its own detailed privacy page in its settings. In short: no ads, no tracking, and without a Zunora ID everything stays on your device.</p>
+    <ul><li><b>Zunora App Store:</b> loads the app list from the store server (Supabase, Ireland) and the files from GitHub; counts downloads without any link to you.</li>
+      <li><b>Zunora Notes, Calendar, Browser, Weather:</b> with a Zunora ID, notes, events, open tabs, bookmarks and weather places are stored end-to-end encrypted in the Zunora Cloud (Supabase, Ireland) — only your devices can read them. Weather data comes from Open-Meteo, severe weather warnings from the German Weather Service via Bright Sky.</li>
+      <li><b>Zunora Files, Photos, Camera:</b> work only on your phone and upload nothing. The camera saves the capture location only if you turn it on.</li>
+      <li><b>Zunora SMS:</b> SMS and MMS go through your mobile network and stay on your phone; spam checks and verification codes are detected on the phone only.</li></ul>
     <h3>This website</h3>
     <p>This website is hosted on GitHub Pages; GitHub technically sees your IP address. It sets no cookies and uses no tracking. Only your browser remembers the chosen language.</p>
     <p><b>Web store:</b> The “Store” page loads the list of Zunora apps, pictures and versions from the Zunora store server (Supabase, data center in Ireland); Supabase technically sees your IP address. When you download an app, the file comes from GitHub and the app’s download counter goes up by one — without any link to you. There is no account and no sign-in there.</p>
     <p class="muted">Last updated: November 2026</p>
   </article>
+    </div>
+  </div>
+  <footer>
+    <a href="index.html">Start</a>
+    <a href="store.html">Store</a>
+    <a href="download.html">Download</a>
+    <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+    <a href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
+    <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
+    <div style="margin-top:8px">© Zunora</div>
+  </footer>
 </div>
 <script src="site.js"></script>
 </body>

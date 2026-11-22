@@ -1,10 +1,10 @@
 // Download-Seite: Gerät erkennen, Plattform wählen, neueste Versionen live aus dem Katalog (sonst feste Links).
 (() => {
   const FALLBACK = {
-    store: { android: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-store-android-v1.1.0/store-android-1.1.0.apk', version: '1.1.0' },
-             pc: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-store-pc-v1.1.2/store-pc-1.1.2.zip', version: '1.1.2' } },
-    messenger: { android: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-android-v1.1.0-beta.6/messenger-android-1.1.0-beta.6.apk', version: '1.1.0-beta.6' },
-                 pc: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-pc-v1.1.0-beta.6/messenger-pc-1.1.0-beta.6.zip', version: '1.1.0-beta.6' } },
+    store: { android: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-store-android-v1.1.1/store-android-1.1.1.apk', version: '1.1.1' },
+             pc: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-store-pc-v1.2.0/store-pc-1.2.0.zip', version: '1.2.0' } },
+    messenger: { android: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-android-v1.1.2-beta.1/messenger-android-1.1.2-beta.1.apk', version: '1.1.2-beta.1' },
+                 pc: { url: 'https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-pc-v1.1.2-beta.1/messenger-pc-1.1.2-beta.1.zip', version: '1.1.2-beta.1' } },
   };
   const ua = navigator.userAgent || '';
   const guess = /Android/i.test(ua) ? 'android' : /Windows/i.test(ua) ? 'windows' : (location.hash === '#windows' ? 'windows' : 'android');
