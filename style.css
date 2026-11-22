@@ -223,3 +223,14 @@ button.lang .ls { display: none; }
   footer > *:not(a) { flex-basis: 100%; }
 }
 @keyframes zsheet { from { translate: 0 60%; opacity: .4; } }
+
+/* ===================================================================== Einladung zu Zunora Messenger (22.11.) */
+.hidden { display: none !important; }
+.invite-icon { display: grid; margin: 0 auto 16px; box-shadow: 0 20px 50px -14px rgba(139, 108, 255, .7); animation: orb 6s ease-in-out infinite; }
+img.invite-icon { display: block; }
+.invite-from { display: inline-block; margin-bottom: 10px; padding: 6px 14px; border-radius: 99px; font-weight: 700; font-size: 14px; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 10px 26px -10px var(--accent); }
+.invite-hero .tabs { margin-top: 6px; }
+.invite-hero .cta { margin-top: 6px; }
+.invite-user { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.invite-user code { font-size: 17px; font-weight: 700; padding: 8px 14px; border-radius: 14px; background: rgba(255, 255, 255, .1); border: 1px solid var(--line); }

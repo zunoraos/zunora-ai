@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://gbthapdqdzkulqaduzgv.supabase.co https://github.com https://objects.githubusercontent.com https://release-assets.githubusercontent.com; connect-src 'self' https://gbthapdqdzkulqaduzgv.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Zunora Messenger · Einladung</title>
+<meta name="description" content="You're invited to Zunora Messenger — end-to-end encrypted chats, calls and status. Download it for your device.">
+<meta property="og:title" content="Zunora Messenger — du bist eingeladen">
+<meta property="og:description" content="Chats, Anrufe und Status — Ende-zu-Ende verschlüsselt. Kostenlos, ohne Telefonnummer.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="index.html"><i></i>Zunora</a>
+    <a class="l" href="index.html">Start</a>
+    <a class="l" href="store.html">Store</a>
+    <a class="l" href="download.html">Download</a>
+    <button class="lang">Deutsch</button>
+  </nav>
+
+  <section class="glass hero big in invite-hero">
+    <div class="icon xl invite-icon" id="invIcon" style="background:linear-gradient(135deg,#9b7bff,#4e2fd0);margin:0 auto 16px">💬</div>
+    <div class="invite-from hidden" id="invFrom"></div>
+    <h1 lang="de">Komm zu Zunora Messenger</h1>
+    <h1 lang="en">Join Zunora Messenger</h1>
+    <p lang="de">Chats, Gruppen, Anrufe und Status — Ende-zu-Ende verschlüsselt. Kostenlos, ohne Werbung und ohne Telefonnummer.</p>
+    <p lang="en">Chats, groups, calls and status — end-to-end encrypted. Free, without ads and without a phone number.</p>
+    <div class="tabs" id="platTabs">
+      <button data-p="android">🤖 Android</button>
+      <button data-p="windows">🪟 Windows</button>
+    </div>
+    <div class="cta"><a class="btn big" id="invDl" href="download.html"><span id="invDlText">Download</span></a></div>
+    <div class="rec" id="invMeta"></div>
+    <div class="rec hidden" id="invApple"><span lang="de">Für iPhone und Mac gibt es Zunora Messenger noch nicht — auf einem Android-Handy oder Windows-PC klappt es schon.</span><span lang="en">Zunora Messenger isn't available for iPhone and Mac yet — it already works on Android phones and Windows PCs.</span></div>
+  </section>
+
+  <section class="glass in hidden" id="invFriend" style="margin-top:14px">
+    <h2 style="margin-top:0"><span lang="de">Danach: Freund hinzufügen</span><span lang="en">Afterwards: add your friend</span></h2>
+    <ol class="steps">
+      <li><span lang="de">Messenger öffnen und ein Konto anlegen (nur Nutzername und Passwort).</span><span lang="en">Open the messenger and create an account (just a username and password).</span></li>
+      <li><span lang="de">Unten auf <b>Freunde</b> tippen und diesen Nutzernamen suchen:</span><span lang="en">Tap <b>Friends</b> at the bottom and search for this username:</span>
+        <div class="invite-user"><code id="invUser"></code><button class="pill" id="invCopy"><span lang="de">Kopieren</span><span lang="en">Copy</span></button></div></li>
+      <li><span lang="de">Anfrage senden — sobald sie angenommen ist, könnt ihr schreiben und telefonieren.</span><span lang="en">Send the request — once it's accepted you can chat and call.</span></li>
+    </ol>
+  </section>
+
+  <section class="glass in" style="margin-top:14px">
+    <h2 style="margin-top:0" lang="de">So installierst du</h2>
+    <h2 style="margin-top:0" lang="en">How to install</h2>
+    <div data-steps="android">
+      <ol class="steps" lang="de">
+        <li>Oben auf „Herunterladen“ tippen und die APK-Datei in den Downloads antippen.</li>
+        <li>Beim ersten Mal fragt Android, ob Apps aus dieser Quelle erlaubt sind — einschalten und zurück.</li>
+        <li>„Installieren“ tippen — fertig.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Tap “Download” above and tap the APK file in your downloads.</li>
+        <li>The first time, Android asks whether apps from this source are allowed — turn it on and go back.</li>
+        <li>Tap “Install” — done.</li>
+      </ol>
+      <p class="muted" lang="de">Android 8 oder neuer.</p><p class="muted" lang="en">Android 8 or newer.</p>
+    </div>
+    <div data-steps="windows">
+      <ol class="steps" lang="de">
+        <li>ZIP-Datei herunterladen und entpacken (Rechtsklick → „Alle extrahieren“).</li>
+        <li>Im Ordner <b>Zunora Messenger.exe</b> starten.</li>
+        <li>Fehlt etwas, fragt Windows nach der „.NET 10 Desktop Runtime“ von Microsoft — einmal <a href="https://dotnet.microsoft.com/download/dotnet/10.0">hier laden</a> (Desktop Runtime, x64).</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Download the ZIP file and extract it (right-click → “Extract All”).</li>
+        <li>Start <b>Zunora Messenger.exe</b> in the folder.</li>
+        <li>If something is missing, Windows asks for Microsoft's “.NET 10 Desktop Runtime” — <a href="https://dotnet.microsoft.com/download/dotnet/10.0">get it here</a> once (Desktop Runtime, x64).</li>
+      </ol>
+      <p class="muted" lang="de">Windows 10 oder 11 (64 Bit).</p><p class="muted" lang="en">Windows 10 or 11 (64-bit).</p>
+    </div>
+    <p class="muted"><span lang="de">Tipp: Mit dem </span><span lang="en">Tip: with the </span><a href="download.html">Zunora App Store</a><span lang="de"> bleibt der Messenger automatisch aktuell.</span><span lang="en"> the messenger stays up to date automatically.</span></p>
+  </section>
+
+  <div class="features" style="margin-top:14px">
+    <div class="glass feature in"><span class="em">🔒</span><b><span lang="de">Ende-zu-Ende verschlüsselt</span><span lang="en">End-to-end encrypted</span></b>
+      <p lang="de">Nur ihr könnt eure Nachrichten und Anrufe lesen und hören — auch Zunora nicht.</p><p lang="en">Only you can read and hear your messages and calls — not even Zunora.</p></div>
+    <div class="glass feature in"><span class="em">📱</span><b><span lang="de">Ohne Telefonnummer</span><span lang="en">No phone number</span></b>
+      <p lang="de">Nur Nutzername und Passwort. Dasselbe Konto am Handy und am PC.</p><p lang="en">Just a username and password. The same account on phone and PC.</p></div>
+    <div class="glass feature in"><span class="em">✨</span><b><span lang="de">Status, Server, Anrufe</span><span lang="en">Status, servers, calls</span></b>
+      <p lang="de">Status wie bei Instagram, Server wie bei Discord, Sprach- und Videoanrufe.</p><p lang="en">Status like Instagram, servers like Discord, voice and video calls.</p></div>
+  </div>
+
+  <footer>
+    <a href="store.html">Store</a>
+    <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+    <a href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
+    <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
+    <div style="margin-top:8px">© Zunora</div>
+  </footer>
+</div>
+<script src="site.js"></script>
+<script src="catalog.js"></script>
+<script src="einladung.js"></script>
+</body>
+</html>
