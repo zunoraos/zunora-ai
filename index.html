@@ -3,64 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://gbthapdqdzkulqaduzgv.supabase.co https://github.com https://objects.githubusercontent.com https://release-assets.githubusercontent.com; connect-src 'self' https://gbthapdqdzkulqaduzgv.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Zunora</title>
-<meta name="description" content="Zunora Messenger and the Zunora App Store — end-to-end encrypted chats, groups, calls and servers.">
+<meta name="description" content="Zunora — one design for all your apps: Messenger, Browser, Weather, Notes, Calendar, Files, Photos, Camera and the Zunora App Store. Private by design.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
   <nav class="top">
     <a class="brand" href="index.html"><i></i>Zunora</a>
+    <a class="l on" href="index.html">Start</a>
+    <a class="l" href="store.html">Store</a>
     <a class="l" href="download.html">Download</a>
-    <a class="l" href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
-    <a class="l" href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
-    <a class="l" href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
     <button class="lang">Deutsch</button>
   </nav>
 
-  <section class="glass hero in">
-    <h1>Zunora Messenger</h1>
-    <p lang="de">Chats, Gruppen, Status und Anrufe — Ende-zu-Ende verschlüsselt. Server wie bei Discord und Zunora AI an Bord. Keine Werbung, kein Tracking.</p>
-    <p lang="en">Chats, groups, status and calls — end-to-end encrypted. Servers like on Discord and Zunora AI on board. No ads, no tracking.</p>
+  <section class="glass hero big in">
+    <div class="orb"></div>
+    <h1>Zunora</h1>
+    <p lang="de">Ein Design. Alle deine Apps. Deine Daten bleiben bei dir — ohne Werbung, ohne Tracking.</p>
+    <p lang="en">One design. All your apps. Your data stays with you — no ads, no tracking.</p>
+    <div class="cta">
+      <a class="btn big" href="store.html"><span lang="de">🛍 Zum Zunora App Store</span><span lang="en">🛍 Open the Zunora App Store</span></a>
+      <a class="btn big ghost" href="download.html"><span lang="de">⬇ Herunterladen</span><span lang="en">⬇ Download</span></a>
+    </div>
+    <span class="rec" lang="de">Für Android und Windows</span><span class="rec" lang="en">For Android and Windows</span>
   </section>
 
-  <div class="grid">
+  <h2 class="section-title"><span lang="de">Die Zunora-Apps</span><span lang="en">The Zunora apps</span></h2>
+  <p class="section-sub" lang="de">Alle im gleichen Look — mit Glas, weichen Bewegungen und einer gemeinsamen Zunora ID.</p>
+  <p class="section-sub" lang="en">All with the same look — glass, smooth motion and one shared Zunora ID.</p>
+  <div class="apps-grid" id="appsLive">
+    <a class="glass app-tile" href="store.html#app=messenger"><div class="icon" style="background:linear-gradient(135deg,#8b6cff,#4e2fd0)">💬</div><b>Zunora Messenger</b><small lang="de">Chats, Gruppen, Anrufe</small><small lang="en">Chats, groups, calls</small></a>
+    <a class="glass app-tile" href="store.html#app=browser"><div class="icon" style="background:linear-gradient(135deg,#4ea0ff,#2a4fd0)">🌐</div><b>Zunora Browser</b><small lang="de">Privat surfen</small><small lang="en">Browse privately</small></a>
+    <a class="glass app-tile" href="store.html#app=weather"><div class="icon" style="background:linear-gradient(135deg,#2fa3ff,#5b3df0)">⛅</div><b>Zunora Wetter</b><small lang="de">Wetter und Warnungen</small><small lang="en">Weather and warnings</small></a>
+    <a class="glass app-tile" href="store.html#app=notes"><div class="icon" style="background:linear-gradient(135deg,#ffb020,#ff6a3d)">📝</div><b>Zunora Notizen</b><small lang="de">Notizen und Listen</small><small lang="en">Notes and lists</small></a>
+    <a class="glass app-tile" href="store.html#app=calendar"><div class="icon" style="background:linear-gradient(135deg,#ff7ab6,#8b5cf6)">📅</div><b>Zunora Kalender</b><small lang="de">Termine im Blick</small><small lang="en">Your schedule</small></a>
+  </div>
+
+  <h2 class="section-title"><span lang="de">Warum Zunora?</span><span lang="en">Why Zunora?</span></h2>
+  <div class="features">
+    <div class="glass feature in"><span class="em">🔒</span><b lang="de">Ende-zu-Ende verschlüsselt</b><b lang="en">End-to-end encrypted</b>
+      <p lang="de">Chats, Anrufe und alles in der Zunora Cloud werden auf deinem Gerät verschlüsselt. Nur du kannst es lesen.</p>
+      <p lang="en">Chats, calls and everything in the Zunora Cloud are encrypted on your device. Only you can read them.</p></div>
+    <div class="glass feature in" style="animation-delay:.06s"><span class="em">🪪</span><b>Zunora ID</b>
+      <p lang="de">Ein Konto für alle Apps — ohne Telefonnummer. Einmal anmelden, überall angemeldet.</p>
+      <p lang="en">One account for all apps — no phone number. Sign in once, signed in everywhere.</p></div>
+    <div class="glass feature in" style="animation-delay:.12s"><span class="em">☁️</span><b>Zunora Cloud</b>
+      <p lang="de">Termine, Notizen, Browser-Tabs und Wetter-Orte auf allen deinen Geräten — freiwillig. Ohne Konto bleibt alles lokal.</p>
+      <p lang="en">Events, notes, browser tabs and weather places on all your devices — optional. Without an account everything stays local.</p></div>
+    <div class="glass feature in" style="animation-delay:.18s"><span class="em">🚫</span><b lang="de">Keine Werbung, kein Tracking</b><b lang="en">No ads, no tracking</b>
+      <p lang="de">Keine Werbe-IDs, keine Analyse-Dienste. Server in der EU (Irland).</p>
+      <p lang="en">No ad IDs, no analytics services. Servers in the EU (Ireland).</p></div>
+  </div>
+
+  <div class="grid" style="margin-top:22px">
+    <div class="glass app in">
+      <h3>🤖 Android</h3>
+      <p lang="de">Hol dir den Zunora App Store — darin findest du alle Zunora-Apps und sie bleiben automatisch aktuell.</p>
+      <p lang="en">Get the Zunora App Store — it has all Zunora apps and keeps them up to date automatically.</p>
+      <a class="btn" href="download.html#android"><span lang="de">Für Android laden</span><span lang="en">Get it for Android</span></a>
+    </div>
     <div class="glass app in" style="animation-delay:.06s">
       <h3>🪟 Windows</h3>
-      <p lang="de">Zunora Messenger für den PC — bald im Microsoft Store.</p>
-      <p lang="en">Zunora Messenger for PC — coming soon to the Microsoft Store.</p>
-      <a class="btn" href="download.html"><span lang="de">Jetzt herunterladen</span><span lang="en">Download now</span></a>
-      <a class="btn off" href="#"><span lang="de">Bald im Microsoft Store</span><span lang="en">Coming to Microsoft Store</span></a>
-    </div>
-    <div class="glass app in" style="animation-delay:.12s">
-      <h3>🤖 Android</h3>
-      <p lang="de">Zunora Messenger (Beta) und der Zunora App Store für alle Zunora-Apps. Direkt laden und installieren.</p>
-      <p lang="en">Zunora Messenger (beta) and the Zunora App Store for all Zunora apps. Download and install directly.</p>
-      <a class="btn" href="https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-android-v1.1.0-beta.5/messenger-android-1.1.0-beta.5.apk">Messenger APK</a>
-      <a class="btn ghost" href="https://github.com/zunoraos/zunora-ai/releases/download/store-store-android-v1.1.0/store-android-1.1.0.apk">App Store APK</a>
-      <p class="muted" lang="de">Android 8 oder neuer. Beim ersten Mal fragt Android, ob Apps aus dieser Quelle erlaubt sind.</p>
-      <p class="muted" lang="en">Android 8 or newer. The first time, Android asks whether apps from this source are allowed.</p>
+      <p lang="de">Der Zunora App Store für den PC — Messenger, Browser, Wetter, Notizen und Kalender mit einem Klick.</p>
+      <p lang="en">The Zunora App Store for PC — Messenger, Browser, Weather, Notes and Calendar with one click.</p>
+      <a class="btn" href="download.html#windows"><span lang="de">Für Windows laden</span><span lang="en">Get it for Windows</span></a>
     </div>
   </div>
 
-  <section class="glass in" style="margin-top:14px;animation-delay:.18s">
-    <h2 style="margin-top:0" lang="de">Was Zunora anders macht</h2>
-    <h2 style="margin-top:0" lang="en">What makes Zunora different</h2>
-    <ul lang="de">
-      <li>Ende-zu-Ende-Verschlüsselung für Chats, Gruppen, Status und Anrufe</li>
-      <li>Ein Konto ohne Telefonnummer: die Zunora ID</li>
-      <li>„Online“ und „zuletzt online“ sind von Anfang an aus</li>
-      <li>Server in der EU (Irland)</li>
-    </ul>
-    <ul lang="en">
-      <li>End-to-end encryption for chats, groups, status and calls</li>
-      <li>One account without a phone number: the Zunora ID</li>
-      <li>“Online” and “last seen” are off by default</li>
-      <li>Servers in the EU (Ireland)</li>
-    </ul>
+  <section class="glass band in">
+    <div><h2 lang="de">Direkt im Browser stöbern</h2><h2 lang="en">Browse right in your browser</h2>
+      <p class="muted" lang="de">Im Web-Store siehst du alle Apps und Spiele und lädst sie für Android oder Windows herunter.</p>
+      <p class="muted" lang="en">The web store shows all apps and games — download them for Android or Windows.</p></div>
+    <a class="btn big" href="store.html"><span lang="de">Web-Store öffnen</span><span lang="en">Open web store</span></a>
   </section>
 
   <footer>
+    <a href="store.html">Store</a>
+    <a href="download.html">Download</a>
     <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
     <a href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
     <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
@@ -68,5 +90,6 @@
   </footer>
 </div>
 <script src="site.js"></script>
+<script src="catalog.js"></script>
 </body>
 </html>

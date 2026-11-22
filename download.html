@@ -3,76 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://gbthapdqdzkulqaduzgv.supabase.co https://github.com https://objects.githubusercontent.com https://release-assets.githubusercontent.com; connect-src 'self' https://gbthapdqdzkulqaduzgv.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Zunora · Download</title>
 <meta name="description" content="Download the Zunora App Store and Zunora Messenger for Windows and Android.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
   <nav class="top">
     <a class="brand" href="index.html"><i></i>Zunora</a>
-    <a class="l" href="download.html">Download</a>
-    <a class="l" href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
-    <a class="l" href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
-    <a class="l" href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
+    <a class="l" href="index.html">Start</a>
+    <a class="l" href="store.html">Store</a>
+    <a class="l on" href="download.html">Download</a>
     <button class="lang">Deutsch</button>
   </nav>
 
   <section class="glass hero in">
     <h1>Download</h1>
-    <p lang="de">Hol dir den Zunora App Store und den Zunora Messenger — für Windows und Android.</p>
-    <p lang="en">Get the Zunora App Store and Zunora Messenger — for Windows and Android.</p>
+    <p lang="de">Starte mit dem Zunora App Store — darin bekommst du alle Zunora-Apps mit einem Tipp, und sie bleiben automatisch aktuell.</p>
+    <p lang="en">Start with the Zunora App Store — it gets you every Zunora app with one tap and keeps them up to date automatically.</p>
+    <div class="tabs" id="platTabs">
+      <button data-p="android">🤖 Android</button>
+      <button data-p="windows">🪟 Windows</button>
+    </div>
+    <div class="rec" id="recText"></div>
   </section>
 
   <div class="grid">
-    <div class="glass app in" style="animation-delay:.06s">
-      <h3>🛍 Zunora App Store</h3>
-      <p lang="de">Alle Zunora-Apps an einem Ort — installieren und automatisch aktuell halten.</p>
-      <p lang="en">All Zunora apps in one place — install them and keep them up to date automatically.</p>
-      <a class="btn" href="https://github.com/zunoraos/zunora-ai/releases/download/store-store-pc-v1.1.2/store-pc-1.1.2.zip">🪟 Windows</a>
-      <a class="btn" href="https://github.com/zunoraos/zunora-ai/releases/download/store-store-android-v1.1.0/store-android-1.1.0.apk">🤖 Android</a>
+    <div class="glass dl-card in" id="cardStore" style="animation-delay:.06s">
+      <div class="head"><div class="icon" style="background:linear-gradient(135deg,#8b6cff,#2f6bff)">🛍</div>
+        <div><h3>Zunora App Store</h3><div class="meta" data-meta="store"></div></div></div>
+      <p class="muted" lang="de">Alle Apps und Spiele von Zunora — installieren, öffnen, aktualisieren. Prüft jede Datei mit ihrer Prüfsumme.</p>
+      <p class="muted" lang="en">All Zunora apps and games — install, open, update. Checks every file against its checksum.</p>
+      <div><a class="btn big" data-dl="store" href="https://github.com/zunoraos/zunora-ai/releases/download/store-store-android-v1.1.0/store-android-1.1.0.apk"><span lang="de">Herunterladen</span><span lang="en">Download</span></a></div>
+      <code class="sha" data-sha="store"></code>
     </div>
-    <div class="glass app in" style="animation-delay:.12s">
-      <h3>💬 Zunora Messenger <span class="muted">Beta</span></h3>
-      <p lang="de">Chats, Gruppen, Status und Anrufe — Ende-zu-Ende verschlüsselt. Server wie bei Discord.</p>
-      <p lang="en">Chats, groups, status and calls — end-to-end encrypted. Servers like on Discord.</p>
-      <a class="btn" href="https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-pc-v1.1.0-beta.5/messenger-pc-1.1.0-beta.5.zip">🪟 Windows</a>
-      <a class="btn" href="https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-android-v1.1.0-beta.5/messenger-android-1.1.0-beta.5.apk">🤖 Android</a>
+    <div class="glass dl-card in" id="cardMsg" style="animation-delay:.12s">
+      <div class="head"><div class="icon" style="background:linear-gradient(135deg,#9b7bff,#4e2fd0)">💬</div>
+        <div><h3>Zunora Messenger <span class="chip beta">BETA</span></h3><div class="meta" data-meta="messenger"></div></div></div>
+      <p class="muted" lang="de">Chats, Gruppen, Status und Anrufe — Ende-zu-Ende verschlüsselt. Server wie bei Discord.</p>
+      <p class="muted" lang="en">Chats, groups, status and calls — end-to-end encrypted. Servers like on Discord.</p>
+      <div><a class="btn big ghost" data-dl="messenger" href="https://github.com/zunoraos/zunora-ai/releases/download/store-messenger-android-v1.1.0-beta.6/messenger-android-1.1.0-beta.6.apk"><span lang="de">Herunterladen</span><span lang="en">Download</span></a></div>
+      <code class="sha" data-sha="messenger"></code>
     </div>
   </div>
+  <p class="muted" style="text-align:center;margin-top:12px"><span lang="de">Weitere Apps und Spiele: </span><span lang="en">More apps and games: </span><a href="store.html">Web-Store</a></p>
 
-  <section class="glass in" style="margin-top:14px;animation-delay:.18s">
+  <section class="glass in" style="margin-top:14px">
     <h2 style="margin-top:0" lang="de">So installierst du</h2>
     <h2 style="margin-top:0" lang="en">How to install</h2>
-    <h3>🪟 Windows</h3>
-    <ol lang="de">
-      <li>ZIP-Datei herunterladen und entpacken (Rechtsklick → „Alle extrahieren“).</li>
-      <li>Im Ordner das Programm starten (<b>ZunoraStore.exe</b> bzw. <b>Zunora Messenger.exe</b>).</li>
-      <li>Fehlt etwas, fragt Windows nach der „.NET 10 Desktop Runtime“ von Microsoft — einmal <a href="https://dotnet.microsoft.com/download/dotnet/10.0">hier laden</a> (Desktop Runtime, x64).</li>
-      <li>Tipp: Installiere zuerst den Zunora App Store — darin bekommst du den Messenger mit einem Klick und immer aktuell.</li>
-    </ol>
-    <ol lang="en">
-      <li>Download the ZIP file and extract it (right-click → “Extract All”).</li>
-      <li>Start the program in the folder (<b>ZunoraStore.exe</b> or <b>Zunora Messenger.exe</b>).</li>
-      <li>If something is missing, Windows asks for Microsoft's “.NET 10 Desktop Runtime” — <a href="https://dotnet.microsoft.com/download/dotnet/10.0">get it here</a> once (Desktop Runtime, x64).</li>
-      <li>Tip: install the Zunora App Store first — it gets you the Messenger with one click and always up to date.</li>
-    </ol>
-    <h3>🤖 Android</h3>
-    <ol lang="de">
-      <li>APK-Datei auf dem Handy herunterladen und antippen.</li>
-      <li>Beim ersten Mal fragt Android, ob Apps aus dieser Quelle erlaubt sind — einschalten und zurück.</li>
-      <li>Android 8 oder neuer.</li>
-    </ol>
-    <ol lang="en">
-      <li>Download the APK file on your phone and tap it.</li>
-      <li>The first time, Android asks whether apps from this source are allowed — turn it on and go back.</li>
-      <li>Android 8 or newer.</li>
-    </ol>
-    <p class="muted" lang="de">🔒 Jede Datei liegt bei GitHub; der Zunora App Store prüft jede App vor dem Installieren mit ihrer Prüfsumme.</p>
-    <p class="muted" lang="en">🔒 Every file is hosted on GitHub; the Zunora App Store checks every app against its checksum before installing.</p>
+    <div data-steps="android">
+      <ol class="steps" lang="de">
+        <li>APK-Datei auf dem Handy herunterladen und in den Downloads antippen.</li>
+        <li>Beim ersten Mal fragt Android, ob Apps aus dieser Quelle erlaubt sind — einschalten und zurück.</li>
+        <li>„Installieren“ tippen. Fertig — ab jetzt holt der Zunora App Store alle weiteren Apps und Updates.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Download the APK file on your phone and tap it in your downloads.</li>
+        <li>The first time, Android asks whether apps from this source are allowed — turn it on and go back.</li>
+        <li>Tap “Install”. Done — from now on the Zunora App Store gets all other apps and updates.</li>
+      </ol>
+      <p class="muted" lang="de">Android 8 oder neuer.</p><p class="muted" lang="en">Android 8 or newer.</p>
+    </div>
+    <div data-steps="windows">
+      <ol class="steps" lang="de">
+        <li>ZIP-Datei herunterladen und entpacken (Rechtsklick → „Alle extrahieren“).</li>
+        <li>Im Ordner <b>ZunoraStore.exe</b> starten.</li>
+        <li>Fehlt etwas, fragt Windows nach der „.NET 10 Desktop Runtime“ von Microsoft — einmal <a href="https://dotnet.microsoft.com/download/dotnet/10.0">hier laden</a> (Desktop Runtime, x64).</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Download the ZIP file and extract it (right-click → “Extract All”).</li>
+        <li>Start <b>ZunoraStore.exe</b> in the folder.</li>
+        <li>If something is missing, Windows asks for Microsoft's “.NET 10 Desktop Runtime” — <a href="https://dotnet.microsoft.com/download/dotnet/10.0">get it here</a> once (Desktop Runtime, x64).</li>
+      </ol>
+      <p class="muted" lang="de">Windows 10 oder 11 (64 Bit).</p><p class="muted" lang="en">Windows 10 or 11 (64-bit).</p>
+    </div>
+  </section>
+
+  <section class="glass in" style="margin-top:14px">
+    <h2 style="margin-top:0" lang="de">Häufige Fragen</h2><h2 style="margin-top:0" lang="en">FAQ</h2>
+    <details class="faq"><summary><span lang="de">Ist das sicher?</span><span lang="en">Is it safe?</span></summary>
+      <p lang="de">Alle Dateien liegen bei GitHub im Konto von Zunora. Unter jedem Download steht die Prüfsumme (SHA-256) — der Zunora App Store prüft sie bei jeder Installation automatisch. Die Apps sind immer mit demselben Schlüssel signiert; Android installiert ein Update nur, wenn der Schlüssel passt.</p>
+      <p lang="en">All files are hosted on GitHub in Zunora's account. The checksum (SHA-256) is shown under every download — the Zunora App Store checks it automatically on every install. The apps are always signed with the same key; Android only installs an update if the key matches.</p></details>
+    <details class="faq"><summary><span lang="de">Warum fragt Android nach „unbekannten Quellen“?</span><span lang="en">Why does Android ask about “unknown sources”?</span></summary>
+      <p lang="de">Zunora-Apps kommen (noch) nicht aus dem Google Play Store. Android fragt deshalb einmal, ob du Apps aus dieser Quelle erlauben möchtest.</p>
+      <p lang="en">Zunora apps don't come from the Google Play Store (yet). So Android asks once whether you want to allow apps from this source.</p></details>
+    <details class="faq"><summary><span lang="de">Kostet Zunora etwas?</span><span lang="en">Does Zunora cost anything?</span></summary>
+      <p lang="de">Die Apps sind kostenlos. Zunora Plus (eigene Farben, Hintergründe, App-Sperre) ist ein freiwilliges Abo für alle Apps.</p>
+      <p lang="en">The apps are free. Zunora Plus (custom colors, backgrounds, app lock) is an optional subscription for all apps.</p></details>
   </section>
 
   <footer>
+    <a href="store.html">Store</a>
     <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
     <a href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
     <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
@@ -80,5 +103,7 @@
   </footer>
 </div>
 <script src="site.js"></script>
+<script src="catalog.js"></script>
+<script src="download.js"></script>
 </body>
 </html>

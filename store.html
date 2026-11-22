@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://gbthapdqdzkulqaduzgv.supabase.co https://github.com https://objects.githubusercontent.com https://release-assets.githubusercontent.com; connect-src 'self' https://gbthapdqdzkulqaduzgv.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Zunora App Store</title>
+<meta name="description" content="The Zunora App Store on the web — all Zunora apps and games for Android and Windows.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap wide">
+  <nav class="top">
+    <a class="brand" href="index.html"><i></i>Zunora</a>
+    <a class="l" href="index.html">Start</a>
+    <a class="l on" href="store.html">Store</a>
+    <a class="l" href="download.html">Download</a>
+    <button class="lang">Deutsch</button>
+  </nav>
+
+  <div class="store-bar">
+    <input id="q" type="search" autocomplete="off" placeholder="Search apps and games …" aria-label="Search">
+    <button class="pill on" data-kind="all"><span lang="de">Alle</span><span lang="en">All</span></button>
+    <button class="pill" data-kind="app">Apps</button>
+    <button class="pill" data-kind="game"><span lang="de">Spiele</span><span lang="en">Games</span></button>
+    <button class="pill" data-kind="soon"><span lang="de">Demnächst</span><span lang="en">Coming soon</span></button>
+  </div>
+  <div class="store-bar">
+    <span class="muted"><span lang="de">Gerät:</span><span lang="en">Device:</span></span>
+    <button class="pill" data-plat="all"><span lang="de">Alle</span><span lang="en">All</span></button>
+    <button class="pill" data-plat="android">🤖 Android</button>
+    <button class="pill" data-plat="pc">🪟 Windows</button>
+  </div>
+
+  <div id="featured"></div>
+  <div id="list" class="cards"><div class="empty"><span lang="de">Lädt den Store …</span><span lang="en">Loading the store …</span></div></div>
+
+  <p class="muted" style="text-align:center;margin-top:22px" lang="de">Tipp: Mit der Zunora-App-Store-App auf deinem Gerät werden Apps automatisch aktuell gehalten — <a href="download.html">hier laden</a>.</p>
+  <p class="muted" style="text-align:center;margin-top:22px" lang="en">Tip: With the Zunora App Store app on your device, apps are kept up to date automatically — <a href="download.html">get it here</a>.</p>
+
+  <footer>
+    <a href="index.html">Start</a>
+    <a href="download.html">Download</a>
+    <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+    <a href="regeln.html"><span lang="de">Nutzungsregeln</span><span lang="en">Terms</span></a>
+    <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a>
+    <div style="margin-top:8px">© Zunora</div>
+  </footer>
+</div>
+<div id="dlg"></div>
+<script src="site.js"></script>
+<script src="catalog.js"></script>
+<script src="store.js"></script>
+</body>
+</html>
