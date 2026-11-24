@@ -11,9 +11,12 @@
   const has = (a, p) => !!ZC.latest(a.id, p);
   const platsOf = (a) => ['android', 'pc'].filter((p) => (a.platforms || []).includes(p));
   const soon = (a) => a.status === 'announced';
+  /** Geräte, die angekündigt, aber noch nicht da sind (iPhone kommt als Web-App über Safari) */
+  const SOON_PLAT = { messenger: ['ios'] };
+  const soonPlats = (a) => SOON_PLAT[a.id] || [];
 
   function badges(a) {
-    return platsOf(a).map((p) => PLAT[p].icon).join(' ') + (soon(a) ? ` <span class="chip soon">${T('DEMNÄCHST', 'SOON')}</span>` : a.status === 'beta' ? ' <span class="chip beta">BETA</span>' : '');
+    return platsOf(a).map((p) => PLAT[p].icon).concat(soonPlats(a).map(() => '🍎')).join(' ') + (soon(a) ? ` <span class="chip soon">${T('DEMNÄCHST', 'SOON')}</span>` : a.status === 'beta' ? ' <span class="chip beta">BETA</span>' : '');
   }
   function filtered() {
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -28,6 +31,7 @@
   function drawList() {
     if (!D) return;
     const l = filtered();
+    const ios = document.querySelector('.ios-soon'); if (ios) ios.hidden = !!q || kind === 'game';
     const f = !q && kind === 'all' ? D.apps.find((a) => a.featured) : null;
     $('#featured').innerHTML = f ? `<div class="glass featured in" data-open="${esc(f.id)}" style="--fa:${/^#[0-9a-fA-F]{6}$/.test(f.accent || '') ? f.accent + '66' : '#8b6cff55'}">
       ${ZC.icon(f, 'xl')}<div><span class="chip">${T('EMPFOHLEN', 'FEATURED')}</span><h2>${esc(f.name)}</h2><p>${esc(f.featured_text || f.subtitle || '')}</p></div></div>` : '';
@@ -48,7 +52,9 @@
       return `<button class="opt ${p === chosen ? 'on' : ''}" data-plat-pick="${p}" ${x ? '' : 'disabled'}>
         <b>${PLAT[p].icon} ${PLAT[p].name}${p === myPlat ? ` · ${T('dein Gerät', 'your device')}` : ''}</b>
         <small>${x ? `Version ${esc(x.version)} · ${ZC.size(x.size)} · ${PLAT[p].file}` : T('noch nicht verfügbar', 'not available yet')}</small></button>`;
-    }).join('');
+    }).join('') + soonPlats(a).map(() => `<button class="opt" disabled>
+        <b>🍎 iPhone${/iPhone|iPad/i.test(ua) ? ` · ${T('dein Gerät', 'your device')}` : ''}</b>
+        <small>${T('Demnächst — direkt über Safari, ohne App Store', 'Coming soon — right in Safari, no App Store')}</small></button>`).join('');
     const dl = v ? `<a class="btn big" id="dlBtn" href="${esc(ZC.safeUrl(v.file_url))}" rel="noopener">⬇ ${T('Herunterladen für', 'Download for')} ${PLAT[chosen].name}</a>
         <div class="muted" style="margin-top:6px">${esc(v.min_os || '')}${v.min_os ? ' · ' : ''}${chosen === 'android' ? T('APK antippen und installieren. Beim ersten Mal „Apps aus dieser Quelle erlauben“.', 'Tap the APK to install. The first time, allow apps from this source.') : T('ZIP entpacken und das Programm darin starten.', 'Extract the ZIP and start the program inside.')}</div>
         ${v.sha256 ? `<code class="sha">SHA-256: ${esc(v.sha256)}</code>` : ''}` : '';
