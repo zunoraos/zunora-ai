@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zunora · Kasse / Checkout</title>
-<!-- Paddle (Verkäufer für Zunora Plus) zeigt die Kasse in einem eigenen, sicheren Fenster. Kartendaten gehen nur an Paddle, nie an Zunora. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.paddle.com https://*.paddle.com; style-src 'self' 'unsafe-inline' https://*.paddle.com; img-src 'self' data: https://*.paddle.com; connect-src 'self' https://*.paddle.com; frame-src https://*.paddle.com https://*.paypal.com https://pay.google.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+<!-- Bezahlt wird auf der sicheren Kasse von Stripe (checkout.stripe.com). Hierher kommt man nur zurück — Kartendaten gehen nie an Zunora. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -19,10 +19,10 @@
   </nav>
   <section class="glass hero in legal-hero">
     <h1><span lang="de">Zunora Plus · Kasse</span><span lang="en">Zunora Plus · Checkout</span></h1>
-    <p id="kStatus" lang="de">Die sichere Kasse von Paddle öffnet sich …</p>
-    <p id="kStatusEn" lang="en">Paddle's secure checkout is opening …</p>
-    <p class="small" lang="de">Verkäufer ist unser Partner Paddle.com — er kümmert sich um Zahlung, Steuern und Rechnung. Deine Kartendaten sieht Zunora nie. Bedingungen: <a href="abo.html">Abo-Bedingungen</a>.</p>
-    <p class="small" lang="en">The seller is our partner Paddle.com — they handle payment, taxes and invoices. Zunora never sees your card details. Terms: <a href="abo.html">subscription terms</a>.</p>
+    <p id="kStatus" lang="de">Bitte starte den Kauf in einer Zunora-App unter Einstellungen → Zunora Plus.</p>
+    <p id="kStatusEn" lang="en">Please start your purchase in a Zunora app under Settings → Zunora Plus.</p>
+    <p class="small" lang="de">Bezahlt wird sicher über Stripe. Deine Kartendaten sieht Zunora nie. Bedingungen: <a href="abo.html">Abo-Bedingungen</a>.</p>
+    <p class="small" lang="en">Payment is handled securely by Stripe. Zunora never sees your card details. Terms: <a href="abo.html">subscription terms</a>.</p>
     <p id="kDone" hidden><a class="btn" href="zunora://plus"><span lang="de">Zurück zur App</span><span lang="en">Back to the app</span></a></p>
   </section>
   <footer>
@@ -33,7 +33,6 @@
   </footer>
 </div>
 <script src="site.js"></script>
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="kasse.js"></script>
 </body>
 </html>
