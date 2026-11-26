@@ -26,7 +26,6 @@
     let g = $('invGroup');
     if (!g) { g = document.createElement('div'); g.id = 'invGroup'; g.className = 'cta'; g.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0'; from.after(g); }
     g.innerHTML = `<a class="btn big" href="zunora://gruppe?c=${gcode}">${de ? 'In Zunora Messenger öffnen' : 'Open in Zunora Messenger'}</a>`
-      + `<a class="pill" href="app/?gruppe=${gcode}">${de ? 'Im Browser öffnen (iPhone)' : 'Open in browser (iPhone)'}</a>`
       + `<div class="rec" style="width:100%">${de ? 'Noch keinen Zunora Messenger? Lade ihn unten herunter und öffne den Link danach noch einmal.' : 'No Zunora Messenger yet? Download it below and open the link again afterwards.'}</div>`;
   }
 
