@@ -32,7 +32,7 @@ const ZC = (() => {
   async function load() {
     if (data) return data;
     const [apps, vers, shots] = await Promise.all([
-      rest('apps?select=id,name,kind,category,subtitle,description,platforms,accent,icon_path,featured,featured_text,sort,status,release_text,price_model,price_text&order=sort.asc,name.asc'),
+      rest('apps?select=*&order=sort.asc,name.asc'),
       rest('versions?select=app_id,platform,channel,version,notes,file_name,file_url,size,sha256,min_os,created_at&channel=in.(stable,beta)&order=created_at.desc&limit=800'),
       rest('app_screens?select=app_id,platform,path,position,caption&order=position.asc'),
     ]);
@@ -47,7 +47,12 @@ const ZC = (() => {
     }
     for (const id in byApp) for (const p in byApp[id]) byApp[id][p].sort((a, b) => cmp(b.version, a.version));
     const sh = {}; for (const s of shots) ((sh[s.app_id] ||= {})[s.platform] ||= []).push(s);
-    return (data = { apps, vers: byApp, shots: sh });
+    // wie die Store-App: Wartung und „Heute"-Karten (fehlen sie, bleibt der Rest wie gehabt)
+    const [status, stories] = await Promise.all([
+      rest('store_status?select=maint_from,maint_until,title,body').catch(() => []),
+      rest('today_stories?select=id,style,kicker,title,subtitle,body,app_id,app_ids,emoji,color1,color2,image_path,countdown_at,platforms,sort&order=sort.asc,created_at.desc&limit=30').catch(() => []),
+    ]);
+    return (data = { apps: apps.filter((a) => a.access !== 'invite'), vers: byApp, shots: sh, status: status[0] || null, stories });
   }
   const latest = (id, plat) => (data?.vers?.[id]?.[plat] || [])[0] || null;
   const media = (p) => !p ? '' : String(p).startsWith('https://') ? p : cfg.url + '/storage/v1/object/public/store-media/' + String(p).split('/').map(encodeURIComponent).join('/');

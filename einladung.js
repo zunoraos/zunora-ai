@@ -15,6 +15,20 @@
   const user = /^[a-z0-9_.]{3,24}$/.test(von) ? von : '';
   const name = (new URLSearchParams(location.search).get('name') || '').trim().slice(0, 40).replace(/[<>&"]/g, '');
   const $ = (id) => document.getElementById(id);
+  // Gruppen-Einladung: einladung.html?gruppe=<code> → „In Zunora öffnen" (App) bzw. Web-App fürs iPhone
+  const grp = (new URLSearchParams(location.search).get('gruppe') || '').trim();
+  const gcode = /^g[A-Za-z0-9]{6,20}$/.test(grp) ? grp : '';
+  function drawGroup(de) {
+    if (!gcode) return;
+    const from = $('invFrom');
+    from.textContent = de ? 'Du wurdest in eine Gruppe im Zunora Messenger eingeladen' : 'You were invited to a group on Zunora Messenger';
+    from.classList.remove('hidden');
+    let g = $('invGroup');
+    if (!g) { g = document.createElement('div'); g.id = 'invGroup'; g.className = 'cta'; g.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0'; from.after(g); }
+    g.innerHTML = `<a class="btn big" href="zunora://gruppe?c=${gcode}">${de ? 'In Zunora Messenger öffnen' : 'Open in Zunora Messenger'}</a>`
+      + `<a class="pill" href="app/?gruppe=${gcode}">${de ? 'Im Browser öffnen (iPhone)' : 'Open in browser (iPhone)'}</a>`
+      + `<div class="rec" style="width:100%">${de ? 'Noch keinen Zunora Messenger? Lade ihn unten herunter und öffne den Link danach noch einmal.' : 'No Zunora Messenger yet? Download it below and open the link again afterwards.'}</div>`;
+  }
 
   function draw() {
     const de = ZC.L() === 'de';
@@ -35,6 +49,7 @@
       $('invUser').textContent = '@' + user;
       $('invFriend').classList.remove('hidden');
     }
+    drawGroup(de);
   }
   $('platTabs').addEventListener('click', (e) => { const b = e.target.closest('button[data-p]'); if (b) { plat = b.dataset.p; history.replaceState(null, '', location.search + '#' + plat); draw(); } });
   $('invCopy').addEventListener('click', async () => { try { await navigator.clipboard.writeText(user); const b = $('invCopy'); b.classList.add('on'); setTimeout(() => b.classList.remove('on'), 1500); } catch (e) { } });
