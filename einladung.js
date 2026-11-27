@@ -15,7 +15,7 @@
   const user = /^[a-z0-9_.]{3,24}$/.test(von) ? von : '';
   const name = (new URLSearchParams(location.search).get('name') || '').trim().slice(0, 40).replace(/[<>&"]/g, '');
   const $ = (id) => document.getElementById(id);
-  // Gruppen-Einladung: einladung.html?gruppe=<code> → „In Zunora öffnen" (App) bzw. Web-App fürs iPhone
+  // Gruppen-Einladung: einladung.html?gruppe=<code> → „In Zunora öffnen" (App)
   const grp = (new URLSearchParams(location.search).get('gruppe') || '').trim();
   const gcode = /^g[A-Za-z0-9]{6,20}$/.test(grp) ? grp : '';
   function drawGroup(de) {

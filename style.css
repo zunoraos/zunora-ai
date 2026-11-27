@@ -234,9 +234,6 @@ img.invite-icon { display: block; }
 .invite-hero .cta { margin-top: 6px; }
 .invite-user { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 .invite-user code { font-size: 17px; font-weight: 700; padding: 8px 14px; border-radius: 14px; background: rgba(255, 255, 255, .1); border: 1px solid var(--line); }
-/* Ankündigung iPhone im Store */
-.ios-soon .ios-ico { background: linear-gradient(135deg, #5aa9ff, #8b6cff); font-size: 46px; }
-.ios-soon[hidden] { display: none; }
 
 /* App Store wie in der App (26.11.2026): Wartung, Heute-Karten mit Countdown, Top-Apps, Premium-Apps */
 .maint { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; border-color: #f59e0b88; }
