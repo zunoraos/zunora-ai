@@ -1,0 +1,74 @@
+/* Zunora-Look für alle Zunora-PC-Apps — gehört zu zlook.js.
+   Der Look besteht immer aus ALLEN Teilen zusammen: Glas, Liquid (flüssiges Licht + Lichtbrechung), Animationen (Federn) und
+   Elastik (alles gibt federnd nach — oben, unten, an den Seiten, von der Stelle aus, wo die Maus ist). */
+:root {
+  /* Federkurve (wird von zlook.js passend zur Elastik-Stärke neu berechnet) */
+  --zl-spring: linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 15.5%, 0.938 20.7%, 1.017, 1.077 30.3%, 1.121 35.1%, 1.098 41.4%, 1.034 52.5%, 1.003 61.2%, 0.989 71.5%, 1.001);
+  --zl-soft: cubic-bezier(.22, 1, .36, 1);
+  --zl-glass-rim: inset 0 1px 0 rgba(255, 255, 255, .22), inset 0 -1px 0 rgba(255, 255, 255, .05), inset 1px 0 0 rgba(255, 255, 255, .06), inset -1px 0 0 rgba(255, 255, 255, .04);
+  --zl-glass-shadow: 0 18px 50px -18px rgba(10, 6, 40, .55), 0 2px 8px rgba(10, 6, 40, .18);
+}
+@media (prefers-color-scheme: light) {
+  :root { --zl-glass-rim: inset 0 1px 0 rgba(255, 255, 255, .85), inset 0 -1px 0 rgba(42, 47, 107, .06), inset 1px 0 0 rgba(255, 255, 255, .5), inset -1px 0 0 rgba(255, 255, 255, .35);
+    --zl-glass-shadow: 0 18px 50px -20px rgba(60, 45, 150, .30), 0 2px 8px rgba(60, 45, 150, .08); }
+}
+
+/* ---------- Glas: durchscheinend, unscharf, mit Lichtkante und weichem Schatten ---------- */
+html.zl .zl-glass {
+  backdrop-filter: blur(28px) saturate(1.8) brightness(1.04) !important; -webkit-backdrop-filter: blur(28px) saturate(1.8) brightness(1.04) !important;
+  box-shadow: var(--zl-glass-rim), var(--zl-glass-shadow);
+}
+/* nur, wenn die App nichts anderes festlegt (fest positionierte Flächen bleiben fest) */
+:where(html.zl .zl-glass) { position: relative; isolation: isolate; }
+@property --zl-light { syntax: "<number>"; inherits: true; initial-value: 0; }
+/* Liquid-Licht: ein weicher Glanz folgt der Maus über das Glas, dazu ein feiner Schimmer an der Oberkante */
+html.zl .zl-glass::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background:
+    radial-gradient(260px circle at var(--mx, 50%) var(--my, -40%), rgba(255, 255, 255, var(--zl-light, 0)), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, .10), transparent 28%);
+  mix-blend-mode: soft-light; transition: --zl-light .4s;
+}
+html.zl .zl-glass:hover { --zl-light: .55; }
+/* Liquid: echte Lichtbrechung — der Hintergrund hinter dem Glas fließt und verzieht sich wie hinter Wasser/Glas (WebView2) */
+html.zl .zl-glass.zl-liquid { backdrop-filter: url(#zl-refract) blur(16px) saturate(1.9) brightness(1.05) !important; -webkit-backdrop-filter: url(#zl-refract) blur(16px) saturate(1.9) brightness(1.05) !important; }
+
+/* ---------- Animationen: Federn beim Drücken, weiches Hineingleiten ---------- */
+html.zl .zl-p { transition: scale .6s var(--zl-spring), filter .2s, background-color .25s, box-shadow .3s; }
+html.zl .zl-p:active { transform: none !important; }
+html.zl .zl-p.zl-down { scale: .93; transition-duration: .14s; transition-timing-function: var(--zl-soft); }
+html.zl .zl-p.zl-down.zl-wide { scale: .975; }
+html.zl .zl-in { animation: zlIn .62s var(--zl-spring) both; animation-delay: var(--zl-d, 0ms); }
+@keyframes zlIn { from { opacity: 0; translate: 0 14px; scale: .96; } to { opacity: 1; translate: 0 0; scale: 1; } }
+html.zl .zl-pop { animation: zlPop .7s var(--zl-spring) both; }
+@keyframes zlPop { from { opacity: 0; scale: .86; translate: 0 18px; } to { opacity: 1; scale: 1; translate: 0 0; } }
+html.zl .zl-view { animation: zlView .5s var(--zl-soft) both; }
+@keyframes zlView { from { opacity: 0; translate: 0 8px; filter: blur(4px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
+
+/* ---------- Liquid-Tropfen in Leisten: gleitet federnd zum gewählten Eintrag und dehnt sich dabei ---------- */
+html.zl .zl-blob-host { position: relative; isolation: isolate; }
+html.zl .zl-blob {
+  position: absolute; z-index: -1; pointer-events: none; border-radius: 18px;
+  background: color-mix(in srgb, var(--accent, #9b7bff) 26%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 6px 18px -6px color-mix(in srgb, var(--accent, #9b7bff) 60%, transparent);
+  backdrop-filter: blur(6px) saturate(1.6);
+}
+html.zl .zl-blob-host > .on, html.zl .zl-blob-host > .active { background: transparent !important; }
+
+/* Ruhige Bewegung, wenn Windows „Animationen aus" sagt */
+@media (prefers-reduced-motion: reduce) {
+  html.zl .zl-in, html.zl .zl-pop, html.zl .zl-view { animation: none; }
+  html.zl .zl-p { transition: none; }
+}
+/* ---- Zunora-Symbole statt Bedien-Emojis (zicons.js) */
+.zi-w { display: inline-flex; align-items: center; justify-content: center; vertical-align: -0.2em; line-height: 0; }
+.zi-w + * { margin-left: .15em; }
+svg.zi { flex: none; }
+/* ---- Wasserringe beim Klicken */
+.zl-ringhost { overflow: hidden; isolation: isolate; }
+.zl-ring { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; border: 2px solid color-mix(in srgb, #fff 65%, var(--accent, #8b6cff));
+  background: radial-gradient(circle, color-mix(in srgb, #fff 18%, transparent), transparent 62%); transform: scale(.04); animation: zl-ring .78s cubic-bezier(.2, .7, .3, 1) forwards; }
+@keyframes zl-ring { to { transform: scale(1); opacity: 0; } }
+/* ---- Flüssigkeits-Welle an der Kante beim Überziehen */
+.zl-wave { position: fixed; pointer-events: none; z-index: 9998; }
+@media (prefers-reduced-motion: reduce) { .zl-ring { display: none; } }

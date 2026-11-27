@@ -1,0 +1,40 @@
+/* Gemeinsamer Zunora-Look für die PC-Programme (wie Zunora AI): „KI-Nacht" dunkel / „Pastell-Holo" hell, Glas, Federn */
+:root {
+  --bg: #0e0b26; --panel: rgba(27, 37, 66, .62); --panel2: rgba(255, 255, 255, .10); --line: rgba(255, 255, 255, .14); --text: #edf2ff; --sub: #b9c3e6;
+  --accent: #9b7bff; --accent2: #5aa9ff; --bad: #ff7a85; --ok: #5be3a0; --warn: #ffc857; --side: rgba(14, 11, 38, .62);
+  --blob1: #6d4cff; --blob2: #2a7fff; --blob3: #c04cff;
+  --spring: cubic-bezier(.34, 1.56, .64, 1); --soft: cubic-bezier(.22, 1, .36, 1);
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #e4e0fa; --panel: rgba(243, 246, 255, .72); --panel2: rgba(42, 47, 107, .08); --line: rgba(42, 47, 107, .14); --text: #192744; --sub: #45516f;
+    --accent: #5b3df0; --accent2: #1f6fe0; --side: rgba(243, 246, 255, .55); --blob1: #f7b5e3; --blob2: #9fe2f7; --blob3: #c9b5ff; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; color: var(--text); font-size: 14.5px; overflow: hidden; }
+body { background: radial-gradient(60vmax 50vmax at 12% 8%, color-mix(in srgb, var(--blob1) 55%, transparent), transparent 60%),
+  radial-gradient(55vmax 45vmax at 92% 18%, color-mix(in srgb, var(--blob2) 45%, transparent), transparent 60%),
+  radial-gradient(60vmax 50vmax at 60% 100%, color-mix(in srgb, var(--blob3) 45%, transparent), transparent 60%), var(--bg); }
+button { font: inherit; color: inherit; cursor: pointer; }
+input, textarea, select { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; outline: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+option { color: #111; }
+.hidden { display: none !important; }
+.muted { color: var(--sub); } .small { font-size: 12.5px; }
+.glass { background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(24px) saturate(1.4); }
+.btn { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; border: 0; border-radius: 13px; padding: 10px 18px; font-weight: 600; transition: transform .35s var(--spring), filter .15s; }
+.btn:hover { filter: brightness(1.1); } .btn:active { transform: scale(.94); } .btn:disabled { opacity: .5; }
+.btn.ghost { background: var(--panel2); color: var(--text); font-weight: 500; }
+.btn.danger { background: var(--bad); }
+.ico { border: 0; background: var(--panel2); width: 38px; height: 38px; border-radius: 50%; font-size: 16px; transition: transform .35s var(--spring), background .2s; }
+.ico:hover { background: color-mix(in srgb, var(--accent) 22%, transparent); } .ico:active { transform: scale(.88); }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--panel2); border: 0; font-size: 13px; transition: transform .35s var(--spring), background .2s; }
+.chip.on { background: var(--accent); color: #fff; } .chip:active { transform: scale(.93); }
+.pop { animation: pop .5s var(--spring) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.97); } }
+#toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(24px); padding: 11px 20px;
+  border-radius: 14px; box-shadow: 0 14px 30px -12px rgba(0,0,0,.5); animation: pop .45s var(--spring); z-index: 50; max-width: 80vw; }
+.dlg-bg { position: fixed; inset: 0; background: rgba(6, 4, 20, .45); display: grid; place-items: center; z-index: 40; animation: fade .2s; }
+@keyframes fade { from { opacity: 0; } }
+.dlg { width: min(560px, 92vw); max-height: 90vh; overflow: auto; border-radius: 22px; padding: 22px; animation: pop .45s var(--spring); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
