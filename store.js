@@ -99,9 +99,9 @@
       return `<button class="opt ${p === chosen ? 'on' : ''}" data-plat-pick="${p}" ${x ? '' : 'disabled'}>
         <b>${PLAT[p].icon} ${PLAT[p].name}${p === myPlat ? ` · ${T('dein Gerät', 'your device')}` : ''}</b>
         <small>${x ? `Version ${esc(x.version)} · ${ZC.size(x.size)} · ${PLAT[p].file}` : T('noch nicht verfügbar', 'not available yet')}</small></button>`;
-    }).join('') + soonPlats(a).map(() => `<button class="opt" disabled>
+    }).join('') + soonPlats(a).map(() => `<a class="opt" href="app/" rel="noopener" style="text-decoration:none">
         <b>🍎 iPhone${/iPhone|iPad/i.test(ua) ? ` · ${T('dein Gerät', 'your device')}` : ''}</b>
-        <small>${T('Demnächst — direkt über Safari, ohne App Store', 'Coming soon — right in Safari, no App Store')}</small></button>`).join('');
+        <small>${T('Testphase — nur mit Tester-Code · in Safari öffnen', 'Test phase — tester code only · open in Safari')}</small></a>`).join('');
     const dl = v ? `<a class="btn big" id="dlBtn" href="${esc(ZC.safeUrl(v.file_url))}" rel="noopener">⬇ ${T('Herunterladen für', 'Download for')} ${PLAT[chosen].name}</a>
         <div class="muted" style="margin-top:6px">${esc(v.min_os || '')}${v.min_os ? ' · ' : ''}${chosen === 'android' ? T('APK antippen und installieren. Beim ersten Mal „Apps aus dieser Quelle erlauben“.', 'Tap the APK to install. The first time, allow apps from this source.') : T('ZIP entpacken und das Programm darin starten.', 'Extract the ZIP and start the program inside.')}</div>
         ${v.sha256 ? `<code class="sha">SHA-256: ${esc(v.sha256)}</code>` : ''}` : '';
